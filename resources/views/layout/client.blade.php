@@ -390,7 +390,7 @@
 
     <!-- End hero -->
     @yield('content')
-    <footer class="bg-[#0b0b0c] mt-20 md:p-8">
+    <footer class="bg-[#0b0b0c] mt-20 md:p-8 ">
         <div class="max-w-screen-xl mx-auto p-4">
             <div class="flex flex-col md:flex-row md:justify-between items-start md:space-y-0">
                 <div class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -464,11 +464,11 @@
 
         <hr class="mb-3 border-gray-700 sm:mx-auto  lg:mb-6" />
 
-        <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center text-white">
+        <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center text-white pb-5">
             <div class="text-center md:text-left">
                 <span class="text-sm font-costum9">Copyright © 2024 Repeat Gym. All Rights Reserved.</span>
             </div>
-            <div class="my-4 md:mt-0">
+            <div class="mt-4 md:mt-0">
                 <ul class="flex flex-wrap justify-center space-x-4 gap-y-3 text-sm font-costum3">
                     <li>
                         <a href="{{ url('/') }}"
