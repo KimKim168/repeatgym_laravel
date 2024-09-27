@@ -214,7 +214,7 @@
 
 <body
     style="
-            background-image: url('../img/logo/Background\ Home\ Page.jpg');
+            background-image: url('assets/img/logo/Background\ Home\ Page.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -222,13 +222,87 @@
         "
     class="text-white bg-[#151515]">
     <!-- Start Navbar -->
-    <nav class="bg-[#0b0b0c] text-white fixed w-full z-40 top-0 start-0">
-        <div
-            class="max-w-screen-xl flex flex-wrap justify-center items-center md:justify-between mx-auto p-4 border-b border-gray-400">
+    <nav class="bg-[#0b0b0c] text-white fixed w-full z-40 top-0 start-0 ">
+        <div class="max-w-screen-xl flex flex-wrap justify-between items-center mx-auto p-4 border-b border-gray-400">
+            <!-- Mobile Menu Toggle -->
+            <div class="lg:hidden">
+                <button id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false"
+                    class="focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+
+                </button>
+            </div>
+            {{-- mobile menu --}}
+            <div id="mobile-menu"
+                class="border fixed top-0 left-0 z-50 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white  w-64 dark:bg-gray-800"
+                tabindex="-1" aria-labelledby="drawer-navigation-label">
+                <a id="drawer-navigation-label" href="{{ url('/') }}"
+                    class="text-center font-semibold  text-gray-500 uppercase dark:text-gray-400">
+                    <img src="{{ asset('assets/img/logo/LOGO For Facebook Profile 02.png') }}" class="w-20 mx-auto">
+                </a>
+
+                <button type="button" id="close-menu-button" aria-controls="drawer-navigation"
+                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    </svg>
+                    <span class="sr-only">Close menu</span>
+                </button>
+
+                <div class="py-4 overflow-y-auto border-t">
+                    <ul class="space-y-2 font-costum3">
+
+                        <li>
+                            <a href="{{ url('/') }}"
+                                class="{{ request()->is('/') ? 'decoration-blue-600 underline underline-offset-8 text-blue-600 bg-gray-200' : 'text-black' }} flex items-center p-2  rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                                <img src="{{ asset('assets/img/icon/home.png') }}" class="w-5">
+                                <span class="ms-3">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/whyrepeatgym') }}"
+                                class="{{ request()->is('whyrepeatgym') ? 'decoration-blue-600 underline underline-offset-8 text-blue-600 bg-gray-200' : 'text-black' }} flex items-center p-2  rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                                <img src="{{ asset('assets/img/icon/gym.png') }}" class="w-5">
+                                <span class="ms-3">WHy Repeat Gym</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/service') }}"
+                                class="{{ request()->is('service') ? 'decoration-blue-600 underline underline-offset-8 text-blue-600 bg-gray-200' : 'text-black' }} flex items-center p-2  rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                                <img src="{{ asset('assets/img/icon/servicePage.png') }}" class="w-5">
+                                <span class="ms-3">Our Services</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('/testimonial') }}"
+                                class="{{ request()->is('testimonial') ? 'decoration-blue-600 underline underline-offset-8 text-blue-600 bg-gray-200' : 'text-black' }} flex items-center p-2  rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                                <img src="{{ asset('assets/img/icon/peopleGym.png') }}" class="w-5">
+                                <span class="ms-3">Testimonials</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/contact_us') }}"
+                                class="{{ request()->is('contact_us') ? 'decoration-blue-600 underline underline-offset-8 text-blue-600 bg-gray-200' : 'text-black' }} flex items-center p-2  rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                                <img src="{{ asset('assets/img/icon/contact-page.png') }}" class="w-5">
+                                <span class="ms-3">Contact Us</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
             <!-- Left Side - Contact Info -->
-            <div class="flex flex-col-reverse gap-5 items-center space-x-3 md:flex-row rtl:space-x-reverse">
+            <div class="hidden md:flex gap-5 items-center space-x-3 md:flex-row">
                 <div class="flex gap-8">
-                    <div class="flex items-center mx-auto justify-center space-x-2">
+                    <div class="flex items-center space-x-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24"
                             fill="none" stroke="#11ace3" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" class="lucide lucide-phone">
@@ -237,57 +311,23 @@
                         </svg>
                         <span class="text-sm">010 / 011 - 88 00 67</span>
                     </div>
-                    <div class="flex space-x-2 md:hidden justify-center items-center">
-                        <img src="{{ asset('assets/img/facebook.png') }}" class="w-5" />
-                        <img src="{{ asset('assets/img/play.png') }}" class="w-8" />
-                        <img src="{{ asset('assets/img/telegram.png') }}" class="w-5" />
-                        <img src="{{ asset('assets/img/phone-call.png') }}" class="w-5" />
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24"
+                            fill="none" stroke="#11ace3" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="lucide lucide-clock">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        <span class="text-sm">Mon - Fri 6:00am - 9:00pm / Sat - Sun 8:00am - 8:00pm</span>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-center space-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24"
-                        fill="none" stroke="#11ace3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-clock">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                    </svg>
-                    <span class="text-sm">Mon - Fri 6:00am - 9:00pm / Sat - Sun 8:00am -
-                        8:00pm</span>
-                </div>
             </div>
 
             <!-- Right Side - Social Media and Menu Button -->
             <div class="flex items-center lg:order-2 gap-2">
-                <!-- <div>
-                        <button
-                            type="button"
-                            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                            data-drawer-target="drawer-navigation"
-                            data-drawer-show="drawer-navigation"
-                            aria-controls="drawer-navigation"
-                        >
-                            <span class="sr-only">Open main menu</span>
-                            <svg
-                                class="w-5 h-5"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 17 14"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M1 1h15M1 7h15M1 13h15"
-                                />
-                            </svg>
-                        </button>
-                    </div> -->
-
-                <!-- Social Media Icons (Hidden on Small Screens) -->
-                <div class="hidden md:flex space-x-4 justify-center items-center">
+                <!-- Social Media - Mobile -->
+                <div class=" flex space-x-2 justify-center items-center">
                     <img src="{{ asset('assets/img/facebook.png') }}" class="w-5" />
                     <img src="{{ asset('assets/img/play.png') }}" class="w-8" />
                     <img src="{{ asset('assets/img/telegram.png') }}" class="w-5" />
@@ -295,43 +335,62 @@
                 </div>
             </div>
         </div>
+        <script>
+            const menuButton = document.getElementById('mobile-menu-button');
+            const closeButton = document.getElementById('close-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('-translate-x-full');
+            });
+
+            closeButton.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+            });
+        </script>
     </nav>
 
-
-
     <!-- Strat hero -->
-    <div class="mt-28 flex flex-col justify-center items-center">
+    <div class="hidden mt-28 lg:flex flex-col justify-center items-center">
         <!-- Logo Section -->
         <div>
-            <img src="../img/logo/LOGO For Facebook Profile 02.png" class="w-28" />
+            <img src="{{ asset('assets/img/logo/LOGO For Facebook Profile 02.png') }}" class="w-28" />
         </div>
 
         <!-- Navigation Menu -->
-        <div class="mt-4 md:mt-0">
-            <ul class="flex flex-wrap justify-center space-x-4 gap-y-3 text-sm font-medium">
+        <div class="mt-4 md:mt-0 ">
+            <ul class="flex flex-wrap justify-center space-x-4 gap-y-3 text-sm font-costum3">
                 <li>
-                    <a href="index.html" class="text-blue-500 pl-2">HOME</a>
+                    <a href="{{ url('/') }}"
+                        class="{{ request()->is('/') ? ' text-blue-500 pl-2' : ' hover:text-blue-500 text-white pl-2' }}">HOME</a>
                 </li>
                 <li class="">
-                    <a href="whyRepeatGym.html" class="text-white hover:text-blue-500 border-l pl-2">WHY REPEAT
-                        GYM</a>
+                    <a href="{{ url('whyrepeatgym') }}"
+                        class="{{ request()->is('whyrepeatgym') ? ' text-blue-500 pl-2 border-l' : ' text-white hover:text-blue-500 border-l pl-2' }}">
+                        WHY REPEAT GYM</a>
                 </li>
                 <li>
-                    <a href="services.html" class="text-white hover:text-blue-500 border-l pl-2">OUR SERVICES</a>
+                    <a href="{{ url('service') }}"
+                        class="{{ request()->is('service') ? ' text-blue-500 pl-2 border-l' : ' text-white hover:text-blue-500 border-l pl-2' }}">OUR
+                        SERVICES</a>
                 </li>
                 <li>
-                    <a href="testimonials.html" class="text-white hover:text-blue-500 border-l pl-2">TESTIMONIALS</a>
+                    <a href="{{ url('/testimonial') }}"
+                        class="{{ request()->is('testimonial') ? ' text-blue-500 pl-2 border-l' : ' text-white hover:text-blue-500 border-l pl-2' }}">TESTIMONIALS</a>
                 </li>
                 <li>
-                    <a href="contactUs.html" class="text-white hover:text-blue-500 border-l pl-2">CONTACT US</a>
+                    <a href="{{ url('contact_us') }}"
+                        class="{{ request()->is('contact_us') ? ' text-blue-500 pl-2 border-l' : ' text-white hover:text-blue-500 border-l pl-2' }}">
+                        CONTACT US</a>
                 </li>
             </ul>
         </div>
+
     </div>
 
     <!-- End hero -->
     @yield('content')
-    <footer class="bg-[#0b0b0c] mt-20 p-8">
+    <footer class="bg-[#0b0b0c] mt-20 md:p-8">
         <div class="max-w-screen-xl mx-auto p-4">
             <div class="flex flex-col md:flex-row md:justify-between items-start md:space-y-0">
                 <div class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -344,7 +403,7 @@
                                 <path
                                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                             </svg>
-                            <span class="text-lg">010 / 011 - 88 00 67</span>
+                            <span class="text-[17px]">010 / 011 - 88 00 67</span>
                         </div>
                         <!-- Email -->
                         <div class="flex items-center space-x-2">
@@ -368,51 +427,71 @@
                             <circle cx="12" cy="12" r="10" />
                             <polyline points="12 6 12 12 16 14" />
                         </svg>
-                        <span class="text-lg">Mon - Fri 6:00am - 9:00pm / Sat - Sun 8:00am -
+                        <span class="text-[17px]">Mon - Fri 6:00am - 9:00pm / Sat - Sun 8:00am -
                             8:00pm</span>
                     </div>
-                    <div class="flex space-x-4 justify-center items-center">
+                    <div class="hidden md:flex space-x-2 justify-center items-center">
                         <div>
-                            <img src="{{ asset('assets/img/facebook.png') }}" class="w-9" />
+                            <img src="{{ asset('assets/img/facebook.png') }}" class="w-7" />
                         </div>
                         <div>
-                            <img src="{{ asset('assets/img/play.png') }}" class="w-14" />
+                            <img src="{{ asset('assets/img/play.png') }}" class="w-[42px]" />
                         </div>
                         <div>
-                            <img src="{{ asset('assets/img/telegram.png') }}" class="w-9" />
+                            <img src="{{ asset('assets/img/telegram.png') }}" class="w-7" />
                         </div>
                         <div>
-                            <img src="{{ asset('assets/img/phone-call.png') }}" class="w-9" />
+                            <img src="{{ asset('assets/img/phone-call.png') }}" class="w-7" />
                         </div>
+                    </div>
+                </div>
+                <div class="md:hidden flex space-x-2 md:justify-center items-center">
+                    <div>
+                        <img src="{{ asset('assets/img/facebook.png') }}" class="w-7" />
+                    </div>
+                    <div>
+                        <img src="{{ asset('assets/img/play.png') }}" class="w-[42px]" />
+                    </div>
+                    <div>
+                        <img src="{{ asset('assets/img/telegram.png') }}" class="w-7" />
+                    </div>
+                    <div>
+                        <img src="{{ asset('assets/img/phone-call.png') }}" class="w-7" />
                     </div>
                 </div>
             </div>
         </div>
 
-        <hr class="my-3 border-gray-700 sm:mx-auto lg:my-6" />
+        <hr class="mb-3 border-gray-700 sm:mx-auto  lg:mb-6" />
 
         <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center text-white">
             <div class="text-center md:text-left">
                 <span class="text-sm font-costum9">Copyright © 2024 Repeat Gym. All Rights Reserved.</span>
             </div>
             <div class="mt-4 md:mt-0">
-                <ul class="flex flex-wrap justify-center space-x-4 gap-y-3 text-sm font-medium">
+                <ul class="flex flex-wrap justify-center space-x-4 gap-y-3 text-sm font-costum3">
                     <li>
-                        <a href="index.html" class="text-blue-500 px-2">HOME</a>
+                        <a href="{{ url('/') }}"
+                            class="{{ request()->is('/') ? ' text-blue-500 pl-2' : ' hover:text-blue-500 text-white pl-2' }}">HOME</a>
                     </li>
                     <li class="">
-                        <a href="whyRepeatGym.html" class="text-white hover:text-blue-500 border-l pl-2">WHY REPEAT
-                            GYM</a>
+                        <a href="{{ url('whyrepeatgym') }}"
+                            class="{{ request()->is('whyrepeatgym') ? ' text-blue-500 pl-2 border-l' : ' text-white hover:text-blue-500 border-l pl-2' }}">
+                            WHY REPEAT GYM</a>
                     </li>
                     <li>
-                        <a href="services.html" class="text-white hover:text-blue-500 border-l pl-2">OUR SERVICES</a>
+                        <a href="{{ url('service') }}"
+                            class="{{ request()->is('service') ? ' text-blue-500 pl-2 border-l' : ' text-white hover:text-blue-500 border-l pl-2' }}">OUR
+                            SERVICES</a>
                     </li>
                     <li>
-                        <a href="testimonials.html"
-                            class="text-white hover:text-blue-500 border-l pl-2">TESTIMONIALS</a>
+                        <a href="{{ url('/testimonial') }}"
+                            class="{{ request()->is('testimonial') ? ' text-blue-500 pl-2 border-l' : ' text-white hover:text-blue-500 border-l pl-2' }}">TESTIMONIALS</a>
                     </li>
                     <li>
-                        <a href="contactUs.html" class="text-white hover:text-blue-500 border-l pl-2">CONTACT US</a>
+                        <a href="{{ url('contact_us') }}"
+                            class="{{ request()->is('contact_us') ? ' text-blue-500 pl-2 border-l' : ' text-white hover:text-blue-500 border-l pl-2' }}">CONTACT
+                            US</a>
                     </li>
                 </ul>
             </div>
