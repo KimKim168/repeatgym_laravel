@@ -468,7 +468,7 @@
             <div class="text-center md:text-left">
                 <span class="text-sm font-costum9">Copyright © 2024 Repeat Gym. All Rights Reserved.</span>
             </div>
-            <div class="mt-4 md:mt-0">
+            <div class="my-4 md:mt-0">
                 <ul class="flex flex-wrap justify-center space-x-4 gap-y-3 text-sm font-costum3">
                     <li>
                         <a href="{{ url('/') }}"
