@@ -81,15 +81,15 @@
     <!-- End contactUS -->
 
     <!-- Strat Map -->
-    <section class="overflow-hidden">
-        <div class="flex justify-center items-center">
+    <section class="overflow-hidden ">
+        <div class="flex justify-center items-center px-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" md:width="24" md:height="24"
                 viewBox="0 0 24 24" fill="none" stroke="#11ace3" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" class="lucide lucide-clock">
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
             </svg>
-            <span class="text-sm sm:text-base md:text-lg mx-2">
+            <span class="text-[12px] sm:text-base md:text-lg mx-2 ">
                 Mon - Fri 6:00am - 9:00pm / Sat - Sun 8:00am - 8:00pm
             </span>
         </div>
