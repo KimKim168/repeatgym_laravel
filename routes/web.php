@@ -29,3 +29,16 @@ Route::get('/testimonial', function () {
 Route::get('/whyrepeatgym', function () {
     return view('client.why_repeat_gym');
 });
+
+Route::get('/tips', function () {
+    return view('client.tips');
+});
+Route::get('/tips/1', function () {
+    return view('client.tips.tip1');
+});
+Route::get('/tips/2', function () {
+    return view('client.tips.tip2');
+});
+Route::get('/tips/3', function () {
+    return view('client.tips.tip3');
+});

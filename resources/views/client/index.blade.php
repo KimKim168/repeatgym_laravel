@@ -1,4 +1,16 @@
 @extends('layout.client')
+@section('meta_data')
+<link rel="apple-touch-icon" href="{{ asset('/assets/img/logo/LOGO%20For%20Facebook%20Profile%2002.png') }}">
+    <link rel="icon" href="{{ asset('/assets/img/logo/LOGO%20For%20Facebook%20Profile%2002.png') }}">
+<meta name="description" content="Join Repeat Gym, a top-rated fitness center designed to help you achieve your fitness goals. With certified personal trainers, diverse group classes, state-of-the-art equipment, and customized workout plans, Repeat Gym is here to support your journey to a healthier, stronger you.">
+<meta name="keywords" content="repeat gym, repeat gyme cambodia, gym, gym cambodia, gym phnom penh, best gym cambodia, fitness center, personal trainer, workout classes, strength training, health club, free trial, fitness goals, cambodia top gym,">
+
+<meta property="og:title" content="REPEAT GYM">
+<meta property="og:description" content="Join Repeat Gym, a top-rated fitness center designed to help you achieve your fitness goals. With certified personal trainers, diverse group classes, state-of-the-art equipment, and customized workout plans, Repeat Gym is here to support your journey to a healthier, stronger you.">
+<meta property="og:image" content="{{ asset('/assets/img/logo/1.slide.jpg') }}">
+<meta property="og:type" content="website">
+@endsection
+
 @section('content')
     <!-- Strat transform -->
     <div id="controls-carousel" class="relative w-full lg:mt-8 mt-[75px]"

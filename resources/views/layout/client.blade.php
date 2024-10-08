@@ -5,6 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>REPEAT GYM</title>
+    <!--META DATA-->
+    <link rel="apple-touch-icon" href="{{ asset('/assets/img/logo/LOGO%20For%20Facebook%20Profile%2002.png') }}">
+    <link rel="icon" href="{{ asset('/assets/img/logo/LOGO%20For%20Facebook%20Profile%2002.png') }}">
+    @yield('meta_data')
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -288,6 +293,13 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{ url('/tips') }}"
+                                class="{{ request()->is('tips') ? 'decoration-blue-600 underline underline-offset-8 text-blue-600 bg-gray-200' : 'text-black' }} flex items-center p-2  rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                                <img src="{{ asset('assets/img/icon/peopleGym.png') }}" class="w-5">
+                                <span class="ms-3">Tips</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ url('/contact_us') }}"
                                 class="{{ request()->is('contact_us') ? 'decoration-blue-600 underline underline-offset-8 text-blue-600 bg-gray-200' : 'text-black' }} flex items-center p-2  rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                                 <img src="{{ asset('assets/img/icon/contact-page.png') }}" class="w-5">
@@ -328,10 +340,21 @@
             <div class="flex items-center lg:order-2 gap-2">
                 <!-- Social Media - Mobile -->
                 <div class=" flex space-x-2 justify-center items-center">
-                    <img src="{{ asset('assets/img/facebook.png') }}" class="w-5" />
-                    <img src="{{ asset('assets/img/play.png') }}" class="w-8" />
-                    <img src="{{ asset('assets/img/telegram.png') }}" class="w-5" />
-                    <img src="{{ asset('assets/img/phone-call.png') }}" class="w-5" />
+                    <a href="https://www.facebook.com/repeatgym?mibextid=kFxxJD"> 
+                        <img src="{{ asset('assets/img/facebook.png') }}" class="w-5" />
+                    </a>
+                    
+                    <a href="https://www.youtube.com/@repeatgym8864"> 
+                        <img src="{{ asset('assets/img/play.png') }}" class="w-8" />
+                    </a>
+                    
+                    <a href="https://t.me/Repeatgym"> 
+                        <img src="{{ asset('assets/img/telegram.png') }}" class="w-5" />
+                    </a>
+                    
+                    <a href="https://wa.me/+85510880067"> 
+                        <img src="{{ asset('assets/img/phone-call.png') }}" class="w-5" />
+                    </a>
                 </div>
             </div>
         </div>
@@ -374,9 +397,14 @@
                         class="{{ request()->is('service') ? ' text-blue-500 pl-2 border-l' : ' text-white hover:text-blue-500 border-l pl-2' }}">OUR
                         SERVICES</a>
                 </li>
+                
                 <li>
                     <a href="{{ url('/testimonial') }}"
                         class="{{ request()->is('testimonial') ? ' text-blue-500 pl-2 border-l' : ' text-white hover:text-blue-500 border-l pl-2' }}">TESTIMONIALS</a>
+                </li>
+                <li>
+                    <a href="{{ url('/tips') }}"
+                        class="{{ request()->is('tips') ? ' text-blue-500 pl-2 border-l' : ' text-white hover:text-blue-500 border-l pl-2' }}">TIPS</a>
                 </li>
                 <li>
                     <a href="{{ url('contact_us') }}"
@@ -431,33 +459,39 @@
                             8:00pm</span>
                     </div>
                     <div class="hidden md:flex space-x-2 justify-center items-center">
-                        <div>
+                        <a href="https://www.facebook.com/repeatgym?mibextid=kFxxJD"> 
                             <img src="{{ asset('assets/img/facebook.png') }}" class="w-7" />
-                        </div>
-                        <div>
-                            <img src="{{ asset('assets/img/play.png') }}" class="w-[42px]" />
-                        </div>
-                        <div>
+                        </a>
+                        
+                        <a href="https://www.youtube.com/@repeatgym8864"> 
+                            <img src="{{ asset('assets/img/play.png') }}" class="w-8" />
+                        </a>
+                        
+                        <a href="https://t.me/Repeatgym"> 
                             <img src="{{ asset('assets/img/telegram.png') }}" class="w-7" />
-                        </div>
-                        <div>
+                        </a>
+                        
+                        <a href="https://wa.me/+85510880067"> 
                             <img src="{{ asset('assets/img/phone-call.png') }}" class="w-7" />
-                        </div>
+                        </a> 
                     </div>
                 </div>
                 <div class="md:hidden flex space-x-2 md:justify-center items-center">
-                    <div>
+                    <a href="https://www.facebook.com/repeatgym?mibextid=kFxxJD"> 
                         <img src="{{ asset('assets/img/facebook.png') }}" class="w-7" />
-                    </div>
-                    <div>
-                        <img src="{{ asset('assets/img/play.png') }}" class="w-[42px]" />
-                    </div>
-                    <div>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/@repeatgym8864"> 
+                        <img src="{{ asset('assets/img/play.png') }}" class="w-8" />
+                    </a>
+                    
+                    <a href="https://t.me/Repeatgym"> 
                         <img src="{{ asset('assets/img/telegram.png') }}" class="w-7" />
-                    </div>
-                    <div>
+                    </a>
+                    
+                    <a href="https://wa.me/+85510880067"> 
                         <img src="{{ asset('assets/img/phone-call.png') }}" class="w-7" />
-                    </div>
+                    </a> 
                 </div>
             </div>
         </div>
